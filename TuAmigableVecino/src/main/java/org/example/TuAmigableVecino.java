@@ -3,6 +3,11 @@ package org.example;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Clase para calcular la distancia mínima a recorrer por Spiderman entre su posición y la de las 2 bombas
+ * @author DENYS PETRYCHENKO OLIYNYK
+ * @version 1.0 (16/12/2024)
+ */
 public class TuAmigableVecino {
 
     //Creación de objeto Scanner dentro de la clase para poder llamarlo desde cualquier méthodo que nos haga falta

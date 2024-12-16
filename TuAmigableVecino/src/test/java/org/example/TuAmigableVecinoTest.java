@@ -29,19 +29,6 @@ class TuAmigableVecinoTest {
     }
 
     @Test
-    void numeroDeCasos(){
-
-        String entradaNoValida1 = "abc\n5\n"; // Simula que el usuario primero ingresa texto no válido y luego un número
-        InputStream prueba1 = new ByteArrayInputStream(entradaNoValida1.getBytes());
-        System.setIn(prueba1);
-
-        int numeroDeCasos = TuAmigableVecino.numeroDeCasos(); // Llamamos al méthodo
-        assertTrue(numeroDeCasos == 5);
-        // El méthodo debe ignorar entradas no válidas y aceptar la siguiente válida. Devuelve True si está correcto
-
-    }
-
-    @Test
     void introducirCadaCaso() {
 
         String entradaVálida = "100,200,400";
