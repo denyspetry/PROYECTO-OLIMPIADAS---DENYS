@@ -126,20 +126,23 @@ public class TuAmigableVecino {
     public static boolean comprobacionRango(String[] posiciones) {
 
         int numero = 0; // Definición de variable de tipo entero
+        boolean comprobacion = false; //Definición de booleano comprobacion inicializado en False
 
         for (int i = 0; i < posiciones.length; i++) { // Bucle para recorrer las posiciones del vector
 
             numero = Integer.parseInt(posiciones[i]); // Cada posición se transforma a número entero y se guarda
                                                     // en la variable numero
-            if (numero < 0 || numero > 10000) { // Si el numero está por encima de 10000 o por debajo de 0 devuelve True
-                return true;
+            if (numero < 0 || numero > 10000) {// Si el numero está por encima de 10000 o por debajo de 0 devuelve True
+
+                comprobacion = true; // actualización de comprobacion a True
+                return comprobacion; // Se devuelve True
             }
             // No se ha incluído un else que devuelva False en ya que podría dar lugar a falsos positivos. Es decir,
             // si por ejemplo, el último valor cumple con los requisitos pero el resto no, nos estaría arrojando
             // una comprobación errónea, a su vez, nos interesa ver que, si únicamente un valor es inválido, nos arroje True
         }
         // Si esta todó correcto devuelve False
-        return false;
+        return comprobacion;
     }
 
     /**

@@ -2,6 +2,11 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TuAmigableVecinoTest {
@@ -21,6 +26,19 @@ class TuAmigableVecinoTest {
     void bucleCasos() {
         // Desde este méthodo de igual manera que en casoPrueba() se llama a más méthodos, con lo cual analizamos
         // cada uno de ellos por separado e individualmente
+    }
+
+    @Test
+    void numeroDeCasos(){
+
+        String entradaNoValida1 = "abc\n5\n"; // Simula que el usuario primero ingresa texto no válido y luego un número
+        InputStream prueba1 = new ByteArrayInputStream(entradaNoValida1.getBytes());
+        System.setIn(prueba1);
+
+        int numeroDeCasos = TuAmigableVecino.numeroDeCasos(); // Llamamos al méthodo
+        assertTrue(numeroDeCasos == 5);
+        // El méthodo debe ignorar entradas no válidas y aceptar la siguiente válida. Devuelve True si está correcto
+
     }
 
     @Test
