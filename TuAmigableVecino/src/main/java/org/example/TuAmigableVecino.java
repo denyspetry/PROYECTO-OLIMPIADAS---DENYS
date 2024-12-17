@@ -44,16 +44,16 @@ public class TuAmigableVecino {
      */
     public static int numeroDeCasos(){
 
-        while (true) {
-            try {
-                int casos = entrada.nextInt();
+        while (true) { //Bucle while inicializado siempre con True
+            try { // Try-Catch para controlar las posibles excepciones de entrada no numérica
+                int casos = entrada.nextInt(); // Pedimos entrada al usuario y la guardamos como entero
                 entrada.nextLine(); // Para limpiar el buffer
                 if (casos > 0) {
-                    return casos;
+                    return casos; // Si la entrada es un número mayor que 0 devuelve la variable casos y salimos del méthodo
                 } else {
-                    System.out.println("El número de casos debe ser mayor que 0.");
+                    System.out.println("El número de casos debe ser mayor que 0."); // Si es un número menor o igual que 0
                 }
-            } catch (InputMismatchException e) {
+            } catch (InputMismatchException e) { // Si es un valor no numérico devuelve lo siguiente
                 System.out.println("Entrada no válida. Debes introducir un número entero..." + e.getMessage());
                 entrada.nextLine(); // Necesario para que no entre en bucle
             }
@@ -117,8 +117,8 @@ public class TuAmigableVecino {
 
         System.out.println("Introduce las posiciones para el caso " + (i+1) + ": ");
 
-        String posiciones[] = entrada.nextLine().split(","); //Guarda en el vector posiciones los datos de entrada
-        // separados por ','
+        String posiciones[] = entrada.nextLine().split(" "); //Guarda en el vector posiciones los datos de entrada
+        // separados por ' '
 
         return posiciones; // Devuelve el vector arriba definido
     }

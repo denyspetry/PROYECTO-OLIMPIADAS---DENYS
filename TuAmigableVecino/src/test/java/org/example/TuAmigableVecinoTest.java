@@ -31,12 +31,12 @@ class TuAmigableVecinoTest {
     @Test
     void introducirCadaCaso() {
 
-        String entradaVálida = "100,200,400";
+        String entradaVálida = "100 200 400";
         String [] vectorEsperado = {"100","200","400"};
 
-       assertArrayEquals(vectorEsperado,entradaVálida.split(","));
+       assertArrayEquals(vectorEsperado,entradaVálida.split(" "));
        // Se comprueba que el méthodo introducirCadaCaso() separa correctamente cada valor de la cadena de texto separada
-        // por ',' y lo guarda en un vector de longitud variable
+        // por ' ' y lo guarda en un vector de longitud variable
     }
 
     @Test
